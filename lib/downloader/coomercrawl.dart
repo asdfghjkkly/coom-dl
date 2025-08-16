@@ -337,9 +337,14 @@ class CybCrawl {
       }
       http.BaseRequest connection = http.Request('GET', imageURL);
       var dio = Dio();
+      // Apply Emy69's headers fix for all downloads
+      dio.options.headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+        "Accept": "text/css"
+      };
       if (imageURL.host.contains("erome")) {
         //Solves Erome 405 not allowed Error:
-        dio.options.headers = {"Referer": "https://www.erome.com/"};
+        dio.options.headers["Referer"] = "https://www.erome.com/";
       }
 
       // Creates a HTTP dependent stream to directly inject bytes to ioSink instead of MEM.
