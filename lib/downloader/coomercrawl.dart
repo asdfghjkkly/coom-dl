@@ -337,6 +337,7 @@ class CybCrawl {
       }
       http.BaseRequest connection = http.Request('GET', imageURL);
       var dio = Dio();
+      dio.options.headers["Accept"] = "text/css"; 
       // Apply Emy69's headers fix for all downloads
       dio.options.headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
