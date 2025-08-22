@@ -42,7 +42,7 @@ class CybCrawl {
     Map? contents = null;
     print("Started");
     try {
-      if (RegExp(r'^((https:\/\/)|(https:\/\/www\.))?coomer\.(party|su){1}\/(onlyfans|fansly|candfans){1}\/user{1}\/.+$')
+      if (RegExp(r'^((https:\/\/)|(https:\/\/www\.))?coomer\.(party|st){1}\/(onlyfans|fansly|candfans){1}\/user{1}\/.+$')
               .hasMatch(url) ||
           RegExp(r'^((https:\/\/)|(https:\/\/www\.))?kemono\.(party|su){1}\/.+$')
               .hasMatch(url)) {
