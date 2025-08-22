@@ -5,19 +5,19 @@ import 'package:http/http.dart' as http;
 import 'package:uuid/uuid.dart';
 
 class NeoCoomer {
-  static var APIURL = "https://coomer.su/api/v1";
+  static var APIURL = "https://coomer.st/api/v1";
 
   static Future<Map<String, dynamic>> init({required url}) async {
     Uri parsed_url = Uri.parse(url);
     List<DownloadItem> download_file = [];
-    if (RegExp(r'^((https:\/\/)|(https:\/\/www\.))?coomer\.(party|su){1}\/(onlyfans|fansly|candfans){1}\/user{1}\/.+$')
+    if (RegExp(r'^((https:\/\/)|(https:\/\/www\.))?coomer\.(party|st){1}\/(onlyfans|fansly|candfans){1}\/user{1}\/.+$')
             .hasMatch(url) ||
-        RegExp(r'^((https:\/\/)|(https:\/\/www\.))?kemono\.(party|su){1}\/.+$')
+        RegExp(r'^((https:\/\/)|(https:\/\/www\.))?kemono\.(party|st){1}\/.+$')
             .hasMatch(url)) {
       if (RegExp(
-              r'^((https:\/\/)|(https:\/\/www\.))?kemono\.(party|su){1}\/.+$')
+              r'^((https:\/\/)|(https:\/\/www\.))?kemono\.(party|st){1}\/.+$')
           .hasMatch(url)) {
-        APIURL = "https://kemono.su/api/v1";
+        APIURL = "https://kemono.st/api/v1";
       }
       if (!RegExp(r'(post)\/\d+$').hasMatch(url)) {
         print(parsed_url.query);
@@ -57,13 +57,13 @@ class NeoCoomer {
           if (temFile.isNotEmpty) {
             download_file.add(DownloadItem(
                 downloadName: element['file']['name'],
-                link: "https://c1.coomer.su/data${element['file']['path']}"));
+                link: "https://c1.coomer.st/data${element['file']['path']}"));
           }
           if (tempAttachments.isNotEmpty) {
             for (var e in tempAttachments) {
               download_file.add(DownloadItem(
                   downloadName: e['name'],
-                  link: "https://c1.coomer.su/data${e['path']}"));
+                  link: "https://c1.coomer.st/data${e['path']}"));
             }
           }
         }
@@ -90,13 +90,13 @@ class NeoCoomer {
             if (files.isNotEmpty) {
               download_file.add(DownloadItem(
                   downloadName: files['name'],
-                  link: "https://c1.coomer.su/data${files['path']}"));
+                  link: "https://c1.coomer.st/data${files['path']}"));
             }
             if (attachments.isNotEmpty) {
               for (var e in attachments) {
                 download_file.add(DownloadItem(
                     downloadName: e['name'],
-                    link: "https://c1.coomer.su/data${e['path']}"));
+                    link: "https://c1.coomer.st/data${e['path']}"));
               }
             }
 
@@ -130,4 +130,5 @@ return {
       "count": downloaditems.length,
       "Folder name": folder
     };
+
 */
